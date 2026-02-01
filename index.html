@@ -1,177 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portable Isolated OS Environment | Pre-Event Learning</title>
-
-  <meta name="description" content="Learn how to use a portable isolated OS environment via USB, HDD, or SSD for secure competitions and system testing without risking personal data.">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #0d1117, #010409);
-      color: #e6edf3;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      color: #58a6ff;
-    }
-
-    h2 {
-      margin-top: 40px;
-      color: #79c0ff;
-    }
-
-    p {
-      font-size: 1.05em;
-      color: #c9d1d9;
-    }
-
-    .card {
-      background: #161b22;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 25px 0;
-      box-shadow: 0 0 0 1px #30363d;
-    }
-
-    .highlight {
-      border-left: 5px solid #3fb950;
-    }
-
-    .warning {
-      border-left: 5px solid #f85149;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 22px;
-      background: linear-gradient(135deg, #238636, #2ea043);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(46,160,67,0.4);
-    }
-
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #8b949e;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portable Isolated OS Environment | Competition Prep</title>
+<meta name="description" content="Mandatory isolated environment setup for competition. Choose USB/External drive (recommended) or Virtual Machine. Protect your data."/>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--ok:#2ea043;--warn:#f85149;}
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#0d1117,#010409);color:var(--text)}
+.container{max-width:1100px;margin:auto;padding:28px}
+header{display:flex;gap:16px;align-items:center;justify-content:space-between}
+nav a{color:var(--accent);text-decoration:none;margin-left:14px;font-weight:600}
+h1{color:var(--accent);margin:18px 0}
+.card{background:var(--panel);border-radius:12px;padding:22px;margin:22px 0;box-shadow:0 0 0 1px #30363d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0b3d91;color:#cde7ff;font-weight:700}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700;background:linear-gradient(135deg,#238636,#2ea043)}
+.btn.alt{background:linear-gradient(135deg,#1f6feb,#388bfd)}
+.sep{border-left:5px solid var(--accent)}
+.warn{border-left:5px solid var(--warn)}
+.small{color:var(--muted)}
+footer{margin:48px 0 10px;text-align:center;color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-  <div class="container">
+<div class="container">
+<header>
+  <div><strong>Competition Prep</strong></div>
+  <nav>
+    <a href="usb-external.html">USB / External (Recommended)</a>
+    <a href="vm.html">Virtual Machine</a>
+  </nav>
+</header>
 
-    <h1>🔐 Portable Isolated OS Environment</h1>
+<h1>🔐 Portable Isolated OS Environment</h1>
+<p class="small">This competition requires a <strong>fully isolated execution environment</strong> so your personal data and main OS remain untouched.</p>
 
-    <p>
-      This page prepares you for the upcoming competition by teaching how to work
-      inside a <strong>fully isolated operating system</strong> that runs independently
-      from your personal data and main OS.
-    </p>
+<div class="card warn">
+  <strong>Why isolation is mandatory</strong>
+  <ul>
+    <li>Your internal disk remains untouched unless you explicitly allow access</li>
+    <li>You control what the environment can see</li>
+    <li>If something breaks: reboot → reset → continue</li>
+  </ul>
+</div>
 
-    <div class="card warning">
-      <strong>Why isolation is mandatory in this competition:</strong>
-      <p>
-        Security tools often require elevated permissions and aggressive system access.
-        Running them on your personal OS can risk data exposure or system instability.
-      </p>
-    </div>
-
-    <h2>🧠 What You Will Learn Here</h2>
-
-    <div class="card">
-      <ul>
-        <li>How isolated environments protect your personal files</li>
-        <li>Why professionals never test on their main OS</li>
-        <li>How competitions safely allow offensive & defensive testing</li>
-        <li>How to prepare your system before arriving at the event</li>
-      </ul>
-    </div>
-
-    <h2>💾 Isolation Using USB / HDD / SSD</h2>
-
-    <div class="card highlight">
-      <p>
-        The isolated environment you will use is <strong>not installed</strong> on your main system.
-        It runs from:
-      </p>
-      <ul>
-        <li>Bootable USB drive</li>
-        <li>External Hard Drive</li>
-        <li>External SSD</li>
-      </ul>
-
-      <p>
-        Your internal disks remain untouched unless you explicitly allow access.
-        This guarantees safety even during advanced testing.
-      </p>
-    </div>
-
-    <h2>🧪 What This Environment Provides</h2>
-
-    <div class="card">
-      <ul>
-        <li>Complete separation from host OS</li>
-        <li>Consistent environment for all participants</li>
-        <li>Safe execution of competition tools</li>
-        <li>Recoverable system — break it, reboot, continue</li>
-      </ul>
-    </div>
-
-    <h2>⬇️ Required Files</h2>
-
-    <div class="card">
-      <p>
-        Download the OS image and preparation material before the event.
-        Instructions will be explained live, but pre-setup is strongly recommended.
-      </p>
-
-      <a class="button" href="#" target="_blank">Download OS Image (.img)</a><br><br>
-      <a class="button" href="#" target="_blank">Preparation PDF (Guide)</a>
-    </div>
-
-    <div class="card warning">
-      <strong>Important Rules:</strong>
-      <ul>
-        <li>Do not install this OS on your internal drive</li>
-        <li>Use only removable media (USB / HDD / SSD)</li>
-        <li>Arrive with the environment ready</li>
-      </ul>
-    </div>
-
-    <footer>
-      Pre-Event Learning Resource • Designed for safe competition environments<br>
-      No personal data is collected from this page
-    </footer>
-
+<div class="grid">
+  <div class="card sep">
+    <span class="badge">Recommended</span>
+    <h2>USB / External HDD / SSD</h2>
+    <p>Boot from removable media for the strongest separation from your host OS.</p>
+    <a class="btn" href="usb-external.html">Start USB / External Setup</a>
   </div>
+  <div class="card">
+    <span class="badge">Alternative</span>
+    <h2>Virtual Machine (VM)</h2>
+    <p>Use a VM if you cannot boot from external media.</p>
+    <a class="btn alt" href="vm.html">Start VM Setup</a>
+  </div>
+</div>
+
+<!-- Ads Placeholder -->
+<div class="card">
+  <strong>Ads</strong>
+  <div class="small">[AdSense placeholder — keep ads outside instructions]</div>
+</div>
+
+<!-- Affiliate Placeholder -->
+<div class="card">
+  <strong>Recommended Gear</strong>
+  <ul class="small">
+    <li>[Affiliate] USB 3.0 / 3.1 (16–32GB minimum)</li>
+    <li>[Affiliate] External SSD (faster boot & persistence)</li>
+  </ul>
+</div>
+
+<footer>No personal data collected • Competition-safe documentation</footer>
+</div>
 </body>
 </html>
