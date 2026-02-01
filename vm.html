@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Virtual Machine Isolation | Full Setup</title>
+<meta name="description" content="VM-based isolated environment setup for competition. Alternative when external boot is unavailable."/>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--warn:#f85149}
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#0d1117,#010409);color:var(--text)}
+.container{max-width:1100px;margin:auto;padding:28px}
+nav a{color:var(--accent);text-decoration:none;margin-right:14px;font-weight:700}
+h1,h2{color:var(--accent)}
+.card{background:var(--panel);border-radius:12px;padding:22px;margin:22px 0;box-shadow:0 0 0 1px #30363d}
+.step{border-left:5px solid var(--accent)}
+.warn{border-left:5px solid var(--warn)}
+details{background:#0b1320;border-radius:10px;padding:14px;margin-top:10px}
+summary{cursor:pointer;font-weight:700}
+.small{color:var(--muted)}
+footer{margin:48px 0 10px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <a href="index.html">← Home</a>
+  <a href="usb-external.html">USB / External (Recommended)</a>
+</nav>
+
+<h1>Virtual Machine — Full Isolation Setup</h1>
+
+<div class="card warn">
+<strong>When to use VM</strong>
+<ul>
+  <li>You cannot boot from external media</li>
+  <li>You still need isolation without touching host OS</li>
+</ul>
+</div>
+
+<div class="card step">
+<h2>Step 1 — Install a VM Platform</h2>
+<p>Install a reputable VM platform compatible with your OS.</p>
+</div>
+
+<div class="card step">
+<h2>Step 2 — Create a New VM</h2>
+<ul>
+  <li>Allocate sufficient RAM & CPU</li>
+  <li>Create a virtual disk (separate from host)</li>
+</ul>
+</div>
+
+<div class="card step">
+<h2>Step 3 — Attach OS Image</h2>
+<p>Attach the downloaded OS image to the VM and start it.</p>
+</div>
+
+<div class="card step">
+<h2>Step 4 — Isolation Controls</h2>
+<ul>
+  <li>Disable shared folders unless required</li>
+  <li>Use NAT networking by default</li>
+</ul>
+</div>
+
+<div class="card warn">
+<strong>Limitations</strong>
+<ul>
+  <li>Lower performance than external boot</li>
+  <li>USB access may require extra configuration</li>
+</ul>
+</div>
+
+<!-- Ads -->
+<div class="card">
+<strong>Ads</strong>
+<div class="small">[AdSense placeholder]</div>
+</div>
+
+<!-- Affiliates -->
+<div class="card">
+<strong>Recommended Upgrades</strong>
+<ul class="small">
+  <li>[Affiliate] RAM upgrade</li>
+  <li>[Affiliate] Internal SSD</li>
+</ul>
+</div>
+
+<footer>VM setup • Alternative isolation</footer>
+</div>
+</body>
+</html>
