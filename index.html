@@ -1,193 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google ads-->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4977618490370246"
-     crossorigin="anonymous"></script> 
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L5X2HSF60T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  gtag('config', 'G-L5X2HSF60T');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portable Isolated OS Environment | Competition Prep</title>
-<meta name="description" content="Mandatory isolated environment setup for competition. Choose USB/External drive (recommended) or Virtual Machine. Protect your data."/>
-<style>
-  .layout {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr) 220px;
-  gap: 20px;
-}
+  <title>Portable Isolated OS Environment | Competition Prep</title>
+  <meta name="description"
+        content="Mandatory isolated environment setup for competition. USB / External drive or Virtual Machine based isolation to protect your data."/>
 
-.sidebar {
-  position: sticky;
-  top: 20px;
-  height: fit-content;
-}
+  <!-- Google AdSense (ONLY ONCE) -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4977618490370246"
+    crossorigin="anonymous"></script>
 
-.ad-box {
-  background: #0b1320;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 0 0 1px #30363d;
-  color: #8b949e;
-  font-size: 0.85em;
-  text-align: center;
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5X2HSF60T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L5X2HSF60T');
+  </script>
 
-@media (max-width: 1100px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    display: none;
-  }
-}
+  <style>
+    :root{
+      --bg:#0d1117;--panel:#161b22;--text:#e6edf3;
+      --muted:#8b949e;--accent:#58a6ff;--ok:#2ea043;--warn:#f85149;
+    }
 
-:root{--bg:#0d1117;--panel:#161b22;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--ok:#2ea043;--warn:#f85149;}
-*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#0d1117,#010409);color:var(--text)}
-.container{max-width:1100px;margin:auto;padding:28px}
-header{display:flex;gap:16px;align-items:center;justify-content:space-between}
-nav a{color:var(--accent);text-decoration:none;margin-left:14px;font-weight:600}
-h1{color:var(--accent);margin:18px 0}
-.card{background:var(--panel);border-radius:12px;padding:22px;margin:22px 0;box-shadow:0 0 0 1px #30363d}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0b3d91;color:#cde7ff;font-weight:700}
-.btn{display:inline-block;padding:14px 22px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700;background:linear-gradient(135deg,#238636,#2ea043)}
-.btn.alt{background:linear-gradient(135deg,#1f6feb,#388bfd)}
-.sep{border-left:5px solid var(--accent)}
-.warn{border-left:5px solid var(--warn)}
-.small{color:var(--muted)}
-footer{margin:48px 0 10px;text-align:center;color:var(--muted)}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-</style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Segoe UI,Arial,sans-serif;
+      background:linear-gradient(135deg,#0d1117,#010409);
+      color:var(--text);
+    }
+
+    .container{max-width:1200px;margin:auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    nav a{color:var(--accent);text-decoration:none;margin-left:16px;font-weight:600}
+
+    .layout{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr) 220px;
+      gap:20px;
+    }
+
+    .sidebar{position:sticky;top:20px;height:fit-content}
+
+    .ad-box{
+      background:#0b1320;
+      border-radius:10px;
+      padding:12px;
+      box-shadow:0 0 0 1px #30363d;
+      text-align:center;
+      font-size:.85em;
+      color:var(--muted);
+    }
+
+    @media(max-width:1100px){
+      .layout{grid-template-columns:1fr}
+      .sidebar{display:none}
+    }
+
+    h1{color:var(--accent)}
+    h2{color:#79c0ff}
+
+    .card{
+      background:var(--panel);
+      border-radius:12px;
+      padding:22px;
+      margin:22px 0;
+      box-shadow:0 0 0 1px #30363d;
+    }
+
+    .warn{border-left:5px solid var(--warn)}
+    .sep{border-left:5px solid var(--accent)}
+    .small{color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:10px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:700;
+      background:linear-gradient(135deg,#238636,#2ea043);
+    }
+    .btn.alt{background:linear-gradient(135deg,#1f6feb,#388bfd)}
+
+    footer{
+      margin-top:40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9em;
+    }
+  </style>
 </head>
+
 <body>
 <div class="container">
-  <div class="layout">
+<div class="layout">
 
-    <!-- LEFT AD -->
-    <aside class="sidebar">
-<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-4977618490370246"
-     data-ad-slot="9440604537"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-    </aside>
-    
-<!--main content -->
-<main>
-  
-<header>
-  <div><strong>Competition Prep</strong></div>
-  <nav>
-    <a href="usb-external.html">USB / External (Recommended)</a>
-    <a href="vm.html">Virtual Machine</a>
-  </nav>
-</header>
+  <!-- LEFT SIDEBAR AD -->
+  <aside class="sidebar">
+    <div class="ad-box">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4977618490370246"
+        data-ad-slot="9440604537"
+        data-ad-format="vertical"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </aside>
 
-<h1>Portable Isolated OS Environment</h1>
-<p class="small">This competition requires a <strong>fully isolated execution environment</strong> so your personal data and main OS remain untouched.</p>
+  <!-- MAIN CONTENT -->
+  <main>
 
-<div class="card warn">
-  <strong>Why isolation is mandatory</strong>
-  
-  <div class="card">
-  <strong>Isolation Overview</strong>
-  <svg viewBox="0 0 600 180" width="100%" height="180">
-    <!-- Host -->
-    <rect x="20" y="40" width="200" height="100" rx="10" fill="#161b22" stroke="#58a6ff"/>
-    <text x="120" y="95" text-anchor="middle" fill="#e6edf3" font-size="14">
-      Host OS<br/>Personal Data
-    </text>
+    <header>
+      <strong>Competition Prep</strong>
+      <nav>
+        <a href="usb-external.html">USB / External</a>
+        <a href="vm.html">Virtual Machine</a>
+      </nav>
+    </header>
 
-    <!-- Arrow -->
-    <line x1="240" y1="90" x2="360" y2="90" stroke="#8b949e" stroke-dasharray="6"/>
+    <h1>Portable Isolated OS Environment</h1>
+    <p class="small">
+      This competition requires a fully isolated execution environment
+      so your personal data and main OS remain untouched.
+    </p>
 
-    <!-- Isolated -->
-    <rect x="380" y="40" width="200" height="100" rx="10" fill="#0b1320" stroke="#3fb950"/>
-    <text x="480" y="95" text-anchor="middle" fill="#e6edf3" font-size="14">
-      Isolated OS<br/>Competition Environment
-    </text>
-  </svg>
-  <p class="small">
-    The isolated OS runs independently. The host system remains untouched unless explicitly allowed.
-  </p>
+    <div class="card warn">
+      <strong>Why isolation is mandatory</strong>
+
+      <div class="card">
+        <strong>Isolation Overview</strong>
+        <svg viewBox="0 0 600 180" width="100%" height="180">
+          <rect x="20" y="40" width="200" height="100" rx="10"
+                fill="#161b22" stroke="#58a6ff"/>
+          <text x="120" y="95" text-anchor="middle" fill="#e6edf3">
+            Host OS
+          </text>
+
+          <line x1="240" y1="90" x2="360" y2="90"
+                stroke="#8b949e" stroke-dasharray="6"/>
+
+          <rect x="380" y="40" width="200" height="100" rx="10"
+                fill="#0b1320" stroke="#3fb950"/>
+          <text x="480" y="95" text-anchor="middle" fill="#e6edf3">
+            Isolated OS
+          </text>
+        </svg>
+
+        <p class="small">
+          The isolated OS runs independently. The host system remains untouched.
+        </p>
+      </div>
+
+      <ul>
+        <li>Internal disk untouched unless explicitly allowed</li>
+        <li>User controls all access</li>
+        <li>Break → reboot → reset</li>
+      </ul>
+    </div>
+
+    <div class="grid">
+      <div class="card sep">
+        <h2>USB / External HDD / SSD</h2>
+        <p>Strongest isolation using removable media.</p>
+        <a class="btn" href="usb-external.html">Start USB Setup</a>
+      </div>
+
+      <div class="card">
+        <h2>Virtual Machine</h2>
+        <p>Fallback option if external boot isn’t possible.</p>
+        <a class="btn alt" href="vm.html">Start VM Setup</a>
+      </div>
+    </div>
+
+    <!-- BOTTOM AD (MODIFIED, SAFE) -->
+    <section class="card" aria-label="Advertisement">
+      <strong class="small">Advertisement</strong>
+      <ins class="adsbygoogle"
+        style="display:block;margin-top:12px"
+        data-ad-client="ca-pub-4977618490370246"
+        data-ad-slot="3581773192"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <!-- AFFILIATE SECTION -->
+    <div class="card">
+      <strong>Recommended Gear</strong>
+      <ul class="small">
+        <li>[Affiliate] USB 3.0 / 3.1 (16–32GB)</li>
+        <li>[Affiliate] External SSD (better speed)</li>
+      </ul>
+    </div>
+
+    <footer>
+      Educational resource • Competition-safe • No personal data collected
+    </footer>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR AD -->
+  <aside class="sidebar">
+    <div class="ad-box">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4977618490370246"
+        data-ad-slot="1234567890"
+        data-ad-format="vertical"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </aside>
+
 </div>
-
-  <ul>
-    <li>Your internal disk remains untouched unless you explicitly allow access</li>
-    <li>You control what the environment can see</li>
-    <li>If something breaks: reboot → reset → continue</li>
-  </ul>
-</div>
-
-<div class="grid">
-  <div class="card sep">
-    <span class="badge">Recommended</span>
-    <h2>USB / External HDD / SSD</h2>
-    <p>Boot from removable media for the strongest separation from your host OS.</p>
-    <a class="btn" href="usb-external.html">Start USB / External Setup</a>
-  </div>
-  <div class="card">
-    <span class="badge">Alternative</span>
-    <h2>Virtual Machine (VM)</h2>
-    <p>Use a VM if you cannot boot from external media.</p>
-    <a class="btn alt" href="vm.html">Start VM Setup</a>
-  </div>
-</div>
-</main>
-
-<aside class="sidebar">
-    <!-- RIGHT AD -->
-<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-4977618490370246"
-     data-ad-slot="9440604537"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-
-    </aside>
-
-  </div>
-</div>
-
-
-<!-- Ads Placeholder -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4977618490370246"
-     crossorigin="anonymous"></script>
-<!-- bottom -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4977618490370246"
-     data-ad-slot="3581773192"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!-- Affiliate Placeholder -->
-<div class="card">
-  <strong>Recommended Gear</strong>
-  <ul class="small">
-    <li>[Affiliate] USB 3.0 / 3.1 (16–32GB minimum)</li>
-    <li>[Affiliate] External SSD (faster boot & persistence)</li>
-  </ul>
-</div>
-
-<footer>No personal data collected • Competition-safe documentation</footer>
 </div>
 </body>
 </html>
