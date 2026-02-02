@@ -95,6 +95,8 @@
       background:linear-gradient(135deg,#238636,#2ea043);
     }
     .btn.alt{background:linear-gradient(135deg,#1f6feb,#388bfd)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0b3d91;color:#cde7ff;font-weight:700}
+    .badge1{display:inline-block;padding:6px 10px;border-radius:999px;background:#12910b;color:#ffffff;font-weight:700}
 
     footer{
       margin-top:40px;
@@ -174,12 +176,14 @@
 
     <div class="grid">
       <div class="card sep">
+        <span class="badge1">Recommended</span>
         <h2>USB / External HDD / SSD</h2>
         <p>Strongest isolation using removable media.</p>
         <a class="btn" href="usb-external.html">Start USB Setup</a>
       </div>
 
       <div class="card">
+        <span class="badge">Alternative</span>
         <h2>Virtual Machine</h2>
         <p>Fallback option if external boot isn’t possible.</p>
         <a class="btn alt" href="vm.html">Start VM Setup</a>
